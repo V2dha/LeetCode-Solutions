@@ -3,8 +3,14 @@
 class Solution:    
     #Function to return the count of number of elements in union of two arrays.
     def doUnion(self,a,n,b,m):
-        res = set(a+b)
-        return len(res)
+        hmap = {}
+        a.extend(b)
+        for num in a:
+            if num in hmap:
+                hmap[num] += 1
+            else:
+                hmap[num] = 1
+        return len(hmap)
 
 #{ 
 #  Driver Code Starts
