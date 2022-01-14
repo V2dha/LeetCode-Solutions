@@ -4,23 +4,33 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+from collections import deque
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        #generate queue and append root to queue
-        #while there are nodes in the queue, 
-            #iterate through the number of nodes in the queue 
-                #(this is the number of nodes in the next level)
-            #pop queue(0), add queue(0).val to current ans list and append queue(0)'s children to queue   
-            #append ans to final_list and reset ans = []
+        """
+        Approach - using a queue
+        1. if not root return None
+        2. Initialize a queue and levelList to store Levels
+        3. insert root into queue
+        4. go through the queue while it is not empty
+            a. initialize a list level to store
+            b. iterate through the queue
+                i. pop the first inserted element
+                ii. insert it into the level
+                iii. append its left child and right child in the queue if they are not None
+            c. insert level into levelList
+        5. return levelList
+        """        
         if not root:
             return []
-        queue = []
+        queue = deque()
         levelList = []
         queue.append(root)
         while len(queue):
             level = []
             for i in range(len(queue)):
-                node = queue.pop(0)
+                node = queue.popleft()
                 level.append(node.val)
                 if node.left:
                     queue.append(node.left)
