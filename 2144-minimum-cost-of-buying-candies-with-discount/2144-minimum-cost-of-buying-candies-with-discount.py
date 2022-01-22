@@ -5,10 +5,7 @@ class Solution:
             return sum(cost)
         cost.sort(reverse=True)
         if n == 3:
-            if cost[2] <= cost[0]+cost[1]:
-                return cost[0]+cost[1]
-            else:
-                return sum(cost)
+            return cost[0]+cost[1]
         minCost = 0
         for i in range(2, n, 3):
             minCost += cost[i-2] + cost[i-1]
