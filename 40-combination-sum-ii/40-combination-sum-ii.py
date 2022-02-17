@@ -1,5 +1,9 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        """
+        DFS Used Backtracking Question
+        Time Complexity = O(2^n)
+        """
         candidates.sort()
         res = []
         self.dfs(candidates, target, [], res)
