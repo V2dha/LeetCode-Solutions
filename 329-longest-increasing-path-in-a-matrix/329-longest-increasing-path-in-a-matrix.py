@@ -1,5 +1,11 @@
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        """
+        https://www.youtube.com/watch?v=uLjO2LUlLN4
+        Approach - DFS and Memoization
+        Time Complexity = O(N*M) without memoization O(2^N)
+        Space Complexity = O(N*M) since we are using cache
+        """
         if not matrix:
             return 0
         n = len(matrix)
