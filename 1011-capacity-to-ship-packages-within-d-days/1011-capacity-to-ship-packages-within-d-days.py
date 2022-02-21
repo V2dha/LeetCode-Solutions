@@ -10,15 +10,16 @@ class Solution:
             if day > days:
                 return 0
         return 1
-            
+    
+    #using binary search
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         if days == 1:
             return sum(weights)
         if len(weights) == days:
             return max(weights)
         
-        start = max(weights)
-        end = sum(weights)
+        start = max(weights) #minimum capacity
+        end = sum(weights)  #maximum capacity
         res = 0
         while start <= end:
             mid = (start+end)//2
