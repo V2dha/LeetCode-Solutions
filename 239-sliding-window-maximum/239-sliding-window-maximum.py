@@ -13,6 +13,7 @@ class Solution:
         for i in range(k, len(nums)):
             res.append(nums[qi[0]])
             
+            #remove the element if its outside the window
             while qi and qi[0] <= i-k:
                 qi.popleft()
             
