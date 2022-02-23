@@ -7,7 +7,7 @@ class Solution:
         n = len(height)-1
         left, right  = 0, n
         maxWater = 0
-        while left < right:
+        while left <= right:
             l = right - left #Calculate Length which is right - left
             h = min(height[left], height[right]) #Calculate the minimum height between two so water don't spill
             maxWater = max(maxWater, h*l) #maximum of the both areas
