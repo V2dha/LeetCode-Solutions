@@ -1,5 +1,9 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
+        """
+        Time Complexity = O(T)
+        Space Complexity = O(1)
+        """
         if not s:
             return True
         str_ptr = 0
