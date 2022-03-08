@@ -6,6 +6,10 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        """
+        Time Complexity = O(N) since the time to search in dictionary is O(1)
+        Space Complexity = O(N) due to dictionary
+        """
         if not head:
             return False
         itr = head
