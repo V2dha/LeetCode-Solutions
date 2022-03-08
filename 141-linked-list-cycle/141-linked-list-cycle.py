@@ -9,11 +9,11 @@ class Solution:
         if not head:
             return False
         itr = head
-        l = []
+        hmap = {}
         while itr:
-            if itr in l:
+            if itr in hmap:
                 return True
             else:
-                l.append(itr)
+                hmap[itr] = 1
             itr = itr.next
         return False
