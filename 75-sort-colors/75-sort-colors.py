@@ -3,6 +3,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        """
+        Approach - 3 pointer Approach 
+        1. Move zeroes to left, ones to middle and twos to right
+        2. Initialise low, mid = 0 and high = n-1
+        3. While mid <= high, if mid == 0, swap with low and low+=1, mid+=1
+        4. if mid == 1, no swap just mid+=1
+        5. if mid == 2, swap with high, high -=1
+        Time Complexity - O(N)
+        Space Complexity - O(1)
+        """
         low = 0
         mid = 0
         high = len(nums)-1
