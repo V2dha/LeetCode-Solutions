@@ -6,7 +6,8 @@ class Solution:
         2. assign left as i+1 and right as n-1 then loop while left < right
         3. if the sum of ith, left, right > 0 right -=1 else left += 1
         4. if equal then add to the resultant array, and get rid of duplicate values with fixed ith
-        5. while left < right and nums[left] == nums[left+1]
+        5. while left < right and nums[left] == nums[left+1] then left+=1 same for right values
+        6. then move the left and right pointer to check other values
         Time Complexity = O(N*N)
         Space Complexity = O(1)
         """
@@ -33,6 +34,14 @@ class Solution:
                     left += 1
                     right -= 1
         return res
+    # """
+    # Approach 2: Using set and hmap
+    # 1. use a set to store unique results and iterate through n-1
+    # 2. initialise hmap and iterate through i+1 -> n
+    # 3. if -(ith+jth) in hmap then add the sorted value in the set else add jth ele in hmap\
+    # Time Complexity - O(N*N)
+    # Space Complexity - O(N)
+    # """
         # res = set()
         # for i in range(len(nums)-1):
         #     hmap = {}
