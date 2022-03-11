@@ -1,5 +1,9 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
+        """
+        Time Complexity - O(numRows*numRows)
+        Space Complexity - O(numRows*numRows)
+        """
         pascalTri = [[] for _ in range(numRows)]
         
         for i in range(numRows):
