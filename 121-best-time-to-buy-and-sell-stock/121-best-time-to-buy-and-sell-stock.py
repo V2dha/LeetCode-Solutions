@@ -4,8 +4,7 @@ class Solution:
         profitsoFar = 0
         lmin = prices[0]
         for i in range(1, len(prices)):
-            if prices[i] < lmin:
-                lmin = prices[i]
+            lmin = min(prices[i], lmin)
             profitsoFar = prices[i] - lmin
             profit = max(profitsoFar, profit)
         return profit
