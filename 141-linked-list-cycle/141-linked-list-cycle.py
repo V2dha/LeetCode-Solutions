@@ -6,6 +6,11 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        """
+        Two Pointer Approach - slow goes by 1 pointer and fast goes by 2 pointer if the there is no cycle then both the pointers can never be equal. Eg - 1-2-3-4-5-6-3
+        Time Complexity = O(N)
+        Space Complexity = O(1)
+        """
         if not head:
             return False
         slow = head
