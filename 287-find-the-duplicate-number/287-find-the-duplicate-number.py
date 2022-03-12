@@ -1,5 +1,11 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
+        """
+        Approach - Floyd's Cycle Detection Algorithm (index and value range)
+        Similar to detect a loop in Linked List
+        Time Complexity - O(N)
+        Space Complexity - O(1)
+        """
         slow = 0
         fast = 0
         while True:
