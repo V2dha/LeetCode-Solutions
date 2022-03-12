@@ -6,14 +6,14 @@ class Solution:
         Time Complexity - O(N)
         Space Complexity - O(1)
         """
-        slow = 0
-        fast = 0
+        slow = nums[0]
+        fast = nums[0]
         while True:
             slow = nums[slow]
             fast = nums[nums[fast]]
             if slow == fast:
                 break
-        slow = 0
+        slow = nums[0]
         while slow != fast:
             slow = nums[slow]
             fast = nums[fast]
