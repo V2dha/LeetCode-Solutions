@@ -1,5 +1,11 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
+        """
+        Approach - Store key value pairs of nums[i] in hmap
+        if the value > n//2 then return key
+        Time Complexity - O(N)
+        Space Complexity - O(N)
+        """
         if len(nums) == 1:
             return nums[0]
         hmap = {}
