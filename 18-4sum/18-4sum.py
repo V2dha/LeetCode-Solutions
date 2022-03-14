@@ -1,5 +1,17 @@
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        """
+        Approach - Using two pointer approach
+        1. Sort the array and initialise res to store result
+        2. Start the ith loop, declare thirdTarget = target-nums[i]
+        3. Start the jth loop from i+1->n, declar secondTarget=thirdTarget-nums[j]
+        4. declare l=j+1 and r=n-1 and while l<r, secondTarget<l+r then l+=1
+        5. If equal then add quad to res
+        6. Take care of duplicates by while l<r and nums[l]=quad[2] or nums[r]=quad[3]
+        7. Take care of duplicates for ith and jth loop in start as well
+        Time Complexity - O(N^3)
+        Space Complexity - O(1)
+        """
         nums.sort()
         res = []
         n = len(nums)
