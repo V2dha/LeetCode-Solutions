@@ -1,16 +1,25 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
+        """
+        Approach 1 - Sort the array and check for consecutive element
+        skip for duplicate elements
+        initialise currLen and maxLen to 1 and update maxLen by maximum of maxLen and currLen
+        if consecutive diff = 1 then currLen += 1 else currLen = 1
+        return maxLen
+        Time Complexity - O(NLogN)
+        Space Complexity - O(1)
+        """
         if not nums:
             return 0
         nums.sort()
-        maxLen = 0
-        currLen = 0
+        maxLen = 1
+        currLen = 1
         for i in range(1, len(nums)):
             if i > 0 and nums[i] == nums[i-1]:
                 continue
             if nums[i]-nums[i-1] == 1:
                 currLen +=  1 
             else:
-                currLen = 0
+                currLen = 1
             maxLen = max(currLen, maxLen)
-        return maxLen+1
+        return maxLen
