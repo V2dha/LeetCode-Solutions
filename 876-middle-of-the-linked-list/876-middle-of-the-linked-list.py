@@ -5,6 +5,13 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        Approach 1 - Iterate through ll once and count total nodes
+        2. Iterate again and break when midCount == count//2 
+        3. Return the midItr
+        Time Complexity - O(N)
+        Space Complexity - 1
+        """
         if not head:
             return head
         itr = head
