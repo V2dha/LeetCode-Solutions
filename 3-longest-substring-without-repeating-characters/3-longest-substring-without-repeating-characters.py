@@ -1,5 +1,14 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        """
+        Approach 2 - Two Pointer Approach and removing left char from set
+        1. Initialise maxLen, l, r and set and iterate while r < len(s)
+        2. if s[r] not in set then add into set and r += 1
+        3. else remove s[l] from set and l += 1
+        4. Update maxLen by max(maxLen, r-l)
+        Time Complexity - O(N) (O(2N) since each each value will be visited by l and r)
+        Space Complexity - O(N)
+        """
         maxLen = 0
         l = 0
         r = 0
