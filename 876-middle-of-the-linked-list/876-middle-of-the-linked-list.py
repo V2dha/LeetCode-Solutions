@@ -7,7 +7,11 @@ class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         """
         Approach 2 - Use slow and fast pointer (Similar to detect loop in LL)
-        
+        1. Initialise slow and fast to head
+        2. while fast and fast.next -> move slow by 1 and fast by 2
+        3. By the time fast reaches end slow would be at middle
+        Time Complexity - O(N)
+        Space Complexity - O(1)
         """
         slow = head
         fast = head
