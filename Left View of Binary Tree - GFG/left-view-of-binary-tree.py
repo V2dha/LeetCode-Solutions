@@ -11,21 +11,19 @@ class Node:
 '''
 
 #Function to return a list containing elements of left view of the binary tree.
-def LeftViewUtil(root, elements, level, max_level):
-    if root is None:
-        return 
+def solve(root, level, elements):
+    if not root:
+        return
     
-    if level > max_level[0]:
+    if level == len(elements):
         elements.append(root.data)
-        max_level[0] = level
         
-    LeftViewUtil(root.left, elements, level+1, max_level)
-    LeftViewUtil(root.right, elements, level+1, max_level)
+    solve(root.left, level+1, elements)
+    solve(root.right, level+1, elements)
     
 def LeftView(root):
     elements = []
-    max_level = [0]
-    LeftViewUtil(root, elements, 1, max_level)
+    solve(root, 0, elements)
     return elements
 
 #{ 
