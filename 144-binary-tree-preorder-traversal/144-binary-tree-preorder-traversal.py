@@ -8,6 +8,9 @@ class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         """
         Approach 2. Using Iteration and stack
+        Same as inoder except add before appending to stack
+        Time Complexity - O(N)
+        Space Complexity - O(N)
         """
         stack = []
         node = root
