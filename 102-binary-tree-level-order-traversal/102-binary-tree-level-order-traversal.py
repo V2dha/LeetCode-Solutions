@@ -21,6 +21,8 @@ class Solution:
                 iii. append its left child and right child in the queue if they are not None
             c. insert level into levelList
         5. return levelList
+        Time Complexity - O(N)
+        Space Complexity - O(N)
         """        
         if not root:
             return []
