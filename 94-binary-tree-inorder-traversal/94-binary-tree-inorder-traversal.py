@@ -6,6 +6,13 @@
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        """
+        Approach 1. Using Recursion
+        1. Initialise empty list to store vals and then call solve function passing list and root
+        2. Declare solve function with paramenters root and ele
+        3. if not root -> return 
+        4. 
+        """
         ele = []
         self.solve(root, ele)
         return ele
@@ -13,9 +20,7 @@ class Solution:
     def solve(self, root, ele):
         if not root:
             return 
-        if root.left:
-            self.solve(root.left, ele)
+        self.solve(root.left, ele)
         ele.append(root.val)
-        if root.right:
-            self.solve(root.right, ele)
+        self.solve(root.right, ele)
         
