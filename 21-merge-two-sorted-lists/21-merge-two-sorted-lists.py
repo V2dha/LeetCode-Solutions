@@ -5,28 +5,47 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        Approach 2 - In place sorting by using l1 and manipulating next pointers
+        Time Complexity - O(N+M)
+        Space Complexity - O(1)
+        """
         if not list1:
             return list2
         if not list2:
             return list1
-        if not list1 and not list2:
-            return None
-        l = []
-        itr1 = list1
-        itr2 = list2
         
-        while itr1:
-            l.append(itr1.val)
-            itr1 = itr1.next
+        if list1.val > list2.val: #in case l1 > l2
+            list1, list2 = list2, list1  
+            
+        l1, l2 = list1, list2
+        res = l1  #to send the head of merged ll
+        while l1 and l2:
+            temp = None
+            while l1 and l1.val <= l2.val:
+                temp = l1
+                l1 = l1.next
+            temp.next = l2
+            l1, l2 = l2, l1 
+        return res
         
-        while itr2:
-            l.append(itr2.val)
-            itr2 = itr2.next
-            
-        l.sort(reverse=True)
-        head = ListNode(l[0])
-        for i in range(1, len(l)):
-            node = ListNode(l[i],head)
-            head = node
-        return head
-            
+        """
+        Approach 1 - Create another ll using 2 sorted ll
+        1. Time Complexity - O(N+M)
+        2. Space Complexity - O(N+M)
+        """
+        dummy = ListNode(0)
+        p = dummy
+        l1 = list1
+        l2 = list2
+        while l1 and l2:
+            if l1.val < l2.val:
+                p.next = l1
+                l1 = l1.next
+            else:
+                p.next = l2
+                l2 = l2.next
+            p = p.next
+        p.next = l1 or l2
+        return dummy.next
+                
