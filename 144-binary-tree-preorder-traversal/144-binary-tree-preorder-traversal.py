@@ -7,7 +7,30 @@
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         """
+        Approach 2. Using Iteration and stack
+        """
+        stack = []
+        node = root
+        preorder = []
+        while True:
+            if node:
+                preorder.append(node.val)
+                stack.append(node)
+                node = node.left
+            else:
+                if not stack:
+                    break
+                node = stack.pop()
+                node = node.right
+        return preorder
+        
+        """
         Approach 1. Using Recursion
+        1. if not root return
+        2. preorder.append(root.val)
+        3. solve(root.left) and solve(root.right)
+        Time Complexity - O(N)
+        Space Complexity - O(N)
         """
         preorder = []
         self.solve(root, preorder)
