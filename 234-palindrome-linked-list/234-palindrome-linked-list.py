@@ -26,11 +26,15 @@ class Solution:
         """
         slow = head
         fast = head
+        #find middle
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         
+        #reverse ll from slow
         slow = self.reverse(slow)
+        
+        #start from head and val 
         start = head
         while slow:
             if start.val != slow.val:
