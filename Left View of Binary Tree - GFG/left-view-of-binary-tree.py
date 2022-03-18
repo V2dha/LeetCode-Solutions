@@ -11,6 +11,17 @@ class Node:
 '''
 
 #Function to return a list containing elements of left view of the binary tree.
+"""
+Approach - First node of each level by traversing root then left and then right
+1. Initialise list to store left view vals
+2. Call the recurseUtil function with parameters root, level=0, and list
+3. Declare the recurseUtil function -> def solve(root, level, ele)
+4. If not root then return 
+5. If level = len(ele) -> ele.append(root.val)
+6. solve(root.left, level+1, ele)
+7. solve(root.right, level+1, ele)
+Time Complexity - O(N) Space Complexity - O(H)
+"""
 def solve(root, level, elements):
     if not root:
         return
