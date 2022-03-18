@@ -6,8 +6,14 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         """
-        Approach -
-        1.
+        Approach - Using carry and sum and making new LL
+        1. Initialise start node to store the sum, temp ptr to iterate and carry
+        2. iterate till l1 or l2 or carry exists and initialise csum = 0
+        3. if l1 -> add l1 to csum and l1 = l1.next
+        4. if l2 -> add l2 to csum and l2 = l2.next
+        5. Add carry to csum and set carry = csum//10
+        6. Initialise new node with val csum%10 and attach it to next of temp
+        7. move temp -> temp.next and return start.next
         Time Complexity - O(max(N, M))
         Space Complexity - O(N)
         """
@@ -26,8 +32,7 @@ class Solution:
             carry = csum//10
             node = ListNode(csum%10)
             temp.next = node
-            temp = temp.next
-            
+            temp = temp.next    
         return start.next
             
         """
