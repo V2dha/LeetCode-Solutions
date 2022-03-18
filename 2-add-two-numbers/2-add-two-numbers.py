@@ -30,8 +30,7 @@ class Solution:
                 l2 = l2.next
             csum += carry
             carry = csum//10
-            node = ListNode(csum%10)
-            temp.next = node
+            temp.next = ListNode(csum%10)
             temp = temp.next    
         return start.next
             
