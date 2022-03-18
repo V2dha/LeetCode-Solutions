@@ -12,20 +12,34 @@ class Solution:
         Time Complexity - O(N)
         Space Complexity - O(N)
         """
+        if not root:
+            return []
         stack = []
-        node = root
+        # node = root
         preorder = []
-        while True:
-            if node:
-                preorder.append(node.val)
-                stack.append(node)
-                node = node.left
-            else:
-                if not stack:
-                    break
-                node = stack.pop()
-                node = node.right
+        # while True:
+        #     if node:
+        #         preorder.append(node.val)
+        #         stack.append(node)
+        #         node = node.left
+        #     else:
+        #         if not stack:
+        #             break
+        #         node = stack.pop()
+        #         node = node.right
+        # return preorder
+        
+        stack.append(root)
+        while stack:
+            node = stack.pop()
+            preorder.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+                
         return preorder
+        
         
         """
         Approach 1. Using Recursion
