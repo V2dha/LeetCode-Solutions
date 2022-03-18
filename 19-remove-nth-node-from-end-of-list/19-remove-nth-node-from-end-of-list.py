@@ -13,16 +13,16 @@ class Solution:
         slow = dummy
         fast = dummy
         
-        for i in range(1, n+1):
+        while n > 0:
             fast = fast.next
-        
+            n -= 1
+            
         while fast.next:
             slow = slow.next
             fast = fast.next
             
         slow.next = slow.next.next
         return dummy.next
-        
         
         """
         Approach 1. Traverse to count nodes and go till 1 to count-n node to delete it
