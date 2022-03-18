@@ -14,6 +14,16 @@ class Solution:
         return prev
         
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        """
+        Approach -
+        1. First find middle of ll using slow and fast ptr
+        2. Then reverse the ll from slow (create separate func for reverse)
+        3. Then take start = head and iterate till slow is not null
+        4. if start.val != slow.val then return false else keep moving slow and start
+        5. return True in the end
+        Time Complexity - O(N/2)+O(N/2)+O(N/2)
+        Space Complexity - O(1)
+        """
         slow = head
         fast = head
         while fast and fast.next:
