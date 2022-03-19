@@ -8,7 +8,9 @@
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         """
-        DFS Approach
+        Approach - Using DFS Recursion
+        Time Complexity - O(N)
+        Space Complexity - O(N) Recursion Stack
         """
         if root == None or root == p or root == q:
             return root
