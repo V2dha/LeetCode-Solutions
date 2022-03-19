@@ -14,17 +14,18 @@ class Solution:
         for ch in s:
             if ch == "(" or ch == "[" or ch == "{":
                 stack.append(ch)
-            elif stack:
-                if stack[-1] == "(" and ch == ")":
-                    stack.pop()
-                elif stack[-1] == "[" and ch == "]":
-                    stack.pop()
-                elif stack[-1] == "{" and ch == "}":
-                    stack.pop()
+            else:
+                if stack:
+                    if stack[-1] == "(" and ch == ")":
+                        stack.pop()
+                    elif stack[-1] == "[" and ch == "]":
+                        stack.pop()
+                    elif stack[-1] == "{" and ch == "}":
+                        stack.pop()
+                    else:
+                        return False
                 else:
                     return False
-            else:
-                return False
         return True if not stack else False
         
     
