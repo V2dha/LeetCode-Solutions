@@ -5,6 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    """
+    Approach 1. By finding height for every left and right subtree and then checking
+    Time Complexity - O(N*N) n for traversing and n for height
+    """
     def height(self, root):
         if not root:
             return 0
