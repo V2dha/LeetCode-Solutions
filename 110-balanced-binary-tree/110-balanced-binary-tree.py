@@ -5,6 +5,20 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def check(root):
+            if not root:
+                return 0
+            left = check(root.left)
+            right = check(root.right)
+            
+            if abs(left-right) > 1 or left == -1 or right == -1:
+                return -1
+            
+            return max(left,right)+1
+        return True if check(root) != -1 else False
+        
+        
     """
     Approach 1. By finding height for every left and right subtree and then checking
     Time Complexity - O(N*N) n for traversing and n for height
