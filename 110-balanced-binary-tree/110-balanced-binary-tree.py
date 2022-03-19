@@ -5,6 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    """
+    Approach - Similar to height of tree just return 1 as soon as tree is unbalanced
+    if check(node) == -1 then it is unbalanced else balanced
+    """
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def check(root):
             if not root:
