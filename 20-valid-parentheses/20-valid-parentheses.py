@@ -27,8 +27,6 @@ class Solution:
                 return False
         return True if not stack else False
         
-        
-        
     
 #         stack = []
 #         openBrac = ['(', '[', '{']
