@@ -9,6 +9,8 @@ class Solution:
         """
         Approach - Get left depth and right depth and add them
         return maximum of the diameter, left depth + right depth
+        Time Complexity - O(N)
+        Space Complexity - O(1) + O(H) Recursion Stack
         """
         self.diameter = 0
         def getDiameter(root):
