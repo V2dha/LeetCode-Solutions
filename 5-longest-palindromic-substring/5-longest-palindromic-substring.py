@@ -1,5 +1,8 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        """"""
+        if s == None or len(s) < 1:
+            return ""
         res_len = 0
         res_left = 0
         res_right = 0
@@ -22,8 +25,6 @@ class Solution:
                 r += 1
         return s[res_left:res_right]
     
-        # s = b a b a d
-        # i = 0
-        #     l = 0 r = 0
+
             
         
