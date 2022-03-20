@@ -1,6 +1,18 @@
 #User function Template for python3
 class Solution:
     def recurseFunc(self, i, subSum, arr, N, subsetSum):
+        """
+       1. Base Condition
+            if i == N:
+                subsetSum.append(subSum)
+                return
+        2. Add the element into subset
+            self.recurseFunc(i+1, subSum+arr[i], arr, N, subsetSum)
+        3. Do not add the element into subset
+            self.recurseFunc(i+1, subSum, arr, N, subsetSum)
+        Time Complexity - O(2^n) if sort then (2^n log (2^n))
+        Space Complexity - O(2^n)
+        """
         #Base Condition
         if i == N:
             subsetSum.append(subSum)
