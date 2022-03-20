@@ -5,10 +5,21 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    prev = None
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.
+        
         """
+        if not root:
+            return 
+        self.flatten(root.right)
+        self.flatten(root.left)
+        
+        root.right = self.prev
+        root.left = None
+        self.prev = root
+        
         #Similar to iterative preorder traversal
         #in which stack can be used to append the root, root.right, and root.left keeping
         #track of the prev node
