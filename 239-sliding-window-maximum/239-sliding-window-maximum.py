@@ -2,6 +2,21 @@
 from collections import deque
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        """
+        Approach 2. Using Deque
+        1. Initialise deque and res and iterate through first k ele
+        2. while q and nums[i] > nums[qi[-1]] then q.pop()
+        3. q.append(i)
+        4. then iterate through k till len(nums) vals
+        5. res.append(nums[q[0]])
+        6. while q and q[0] <= i-k then q.popleft() - out of window values
+        7. while q and nums[i] > nums[q[-1]] then q.pop()
+        8. q.append(i)
+        9. after the loop, enter the last window max -> res.append(nums[q[0]])
+        10. return res
+        Time Complexity - O(N)
+        Space Complexity - O(K)
+        """
         res = []
         qi = deque()
         
