@@ -38,9 +38,9 @@ class Solution:
                             l+=1
                         while l < r and nums[r] == quad[3]:
                             r-=1
-                while j+1 < n and nums[j] == nums[j+1]:
-                    j += 1
-            while i+1 < n and nums[i] == nums[i+1]:
-                i += 1
+            #     while j+1 < n and nums[j] == nums[j+1]:
+            #         j += 1
+            # while i+1 < n and nums[i] == nums[i+1]:
+            #     i += 1
         return res
                 
