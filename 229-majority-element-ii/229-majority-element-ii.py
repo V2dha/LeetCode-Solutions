@@ -14,7 +14,7 @@ class Solution:
         if not nums:
             return nums
         count1, count2 = 0, 0
-        nums1, nums2 = -1, -1
+        nums1, nums2 = 0, 0
         res = []
         for i in range(len(nums)):
             if nums1 == nums[i]:
