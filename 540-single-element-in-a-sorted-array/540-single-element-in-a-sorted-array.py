@@ -17,7 +17,7 @@ class Solution:
                 low = mid+2      #element lies after mid
             else:
                 high = mid       #element lies before mid
-        return nums[low]
+        return nums[high]
             
            
             
