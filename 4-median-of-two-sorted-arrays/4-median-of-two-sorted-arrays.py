@@ -1,6 +1,9 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        
+        """
+        Approach 2. Binary Search Using partition
+        Time Complexity - Log(M+N)
+        """
         
         """
         Approach - Naive 2 pointer  
