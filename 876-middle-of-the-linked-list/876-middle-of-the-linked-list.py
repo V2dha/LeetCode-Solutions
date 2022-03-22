@@ -13,12 +13,12 @@ class Solution:
         Time Complexity - O(N)
         Space Complexity - O(1)
         """
-#         slow = head
-#         fast = head
-#         while fast and fast.next:
-#             slow = slow.next
-#             fast = fast.next.next
-#         return slow
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
         
        
         """
@@ -43,11 +43,4 @@ class Solution:
             mid -= 1
         return itr
         
-        midItr = head
-        midCount = 0
-        while midItr:
-            if midCount == count//2:
-                return midItr
-            midItr = midItr.next
-            midCount += 1
-        return midItr
+       
