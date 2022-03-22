@@ -1,6 +1,11 @@
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        nums.sort()
-        return nums[len(nums)-k]
+        #NlogN
+        # nums.sort()
+        # return nums[len(nums)-k]
+        #Nlogk
+        return heapq.nlargest(k, nums)[-1]
+    
+    
         
