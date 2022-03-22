@@ -14,18 +14,18 @@ class Solution:
         Time Complexity - O(N) 
         Space Complexity - O(1)
         """
-        dummy = ListNode(0)
-        dummy.next = head
-        slow = dummy
-        fast = dummy
-        while n > 0:
-            fast = fast.next
-            n -= 1
-        while fast.next:
-            slow = slow.next
-            fast = fast.next
-        slow.next = slow.next.next
-        return dummy.next
+        # dummy = ListNode(0)
+        # dummy.next = head
+        # slow = dummy
+        # fast = dummy
+        # while n > 0:
+        #     fast = fast.next
+        #     n -= 1
+        # while fast.next:
+        #     slow = slow.next
+        #     fast = fast.next
+        # slow.next = slow.next.next
+        # return dummy.next
 
         """
         Approach 1. Traverse to count nodes and go till 1 to count-n node to delete it
@@ -41,7 +41,16 @@ class Solution:
             return None
         nEnd = 1
         itr = head
-        pos = count - n
+        pos = count-n
+        if pos == 0:
+            head = head.next
+            return head
+        while pos != 1:
+            itr = itr.next
+            pos -=1
+        itr.next = itr.next.next
+        return head
+        
         if pos == 0:
             head = head.next
         else:
