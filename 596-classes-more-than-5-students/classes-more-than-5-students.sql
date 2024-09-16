@@ -1,8 +1,7 @@
 /* Write your PL/SQL query statement below */
 
 select class from
-(select class, count(student) as cnt 
-from Courses
+courses
 group by class
-)
-where cnt >= 5;
+having count(student) >= 5;
+
