@@ -1,7 +1,7 @@
 /* Write your PL/SQL query statement below */
 
 select class from
-(select class, count(distinct student) as cnt 
+(select class, count(student) as cnt 
 from Courses
 group by class
 )
