@@ -4,6 +4,9 @@ class Solution:
         max_profit = 0
         lmin = prices[0]
 
+        if len(prices) == 1:
+            return max_profit
+
         for i in range(len(prices)):
             if prices[i] < lmin:
                 lmin = prices[i]
