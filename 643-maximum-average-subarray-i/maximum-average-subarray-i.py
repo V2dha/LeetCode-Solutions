@@ -1,7 +1,5 @@
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
-        max_sum = -99999999
-      
         if len(nums) == k:
             return sum(nums)/k
 
